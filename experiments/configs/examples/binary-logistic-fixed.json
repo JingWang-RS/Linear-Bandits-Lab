@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "horizon": 6000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "environment": {
+    "dimension": 2,
+    "mean_model": {
+      "link": "sigmoid"
+    },
+    "feedback": {
+      "kind": "bernoulli"
+    },
+    "noise": {
+      "distribution": "none",
+      "scale": 0.0
+    },
+    "parameter_process": {
+      "kind": "stationary",
+      "bound": 5.0,
+      "initial": [
+        5.0,
+        0.0
+      ]
+    },
+    "action_process": {
+      "mode": "fixed",
+      "sampler": "uniform-cube-clipped",
+      "count": 20,
+      "bound": 1.0,
+      "resample_per_trial": false,
+      "seed": 0
+    }
+  },
+  "algorithms": [
+    {
+      "name": "OL2M",
+      "algorithm": "ol2m",
+      "parameters": {
+        "delta": 0.00016666666666666666
+      }
+    },
+    {
+      "name": "GLM-UCB-regularized",
+      "algorithm": "glm-ucb-regularized",
+      "parameters": {
+        "delta": 0.00016666666666666666
+      }
+    },
+    {
+      "name": "MLogB-variant",
+      "algorithm": "mlogb-ucb-variant",
+      "parameters": {
+        "delta": 0.00016666666666666666
+      }
+    }
+  ]
+}

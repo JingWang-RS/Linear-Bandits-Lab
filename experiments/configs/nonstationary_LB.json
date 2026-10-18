@@ -1,0 +1,64 @@
+{
+  "title": "Non-stationary linear and generalized linear bandits — TIT 2026",
+  "experiments": [
+    {
+      "config": "nonstationary_LB/nonstationary-linear-fixed.json",
+      "title": "Figure 1(a): Linear bandits",
+      "runtime": true,
+      "algorithms": [
+        "OFUL",
+        "RestartUCB",
+        "MASTER-n0",
+        "MASTER-n13",
+        "D-LinUCB",
+        "WeightUCB"
+      ]
+    },
+    {
+      "config": "nonstationary_LB/nonstationary-glb-s1.json",
+      "title": "Figure 1(b): GLB, S=1",
+      "runtime": true,
+      "algorithms": [
+        "GLM-UCB",
+        "GLB-RestartUCB",
+        "MASTER-n13",
+        "BVD-GLM-UCB",
+        "GLB-WeightUCB"
+      ]
+    },
+    {
+      "config": "nonstationary_LB/nonstationary-scb-s1.json",
+      "title": "Figure 1(c): SCB, S=1",
+      "runtime": true,
+      "algorithms": [
+        "LogUCB1",
+        "SCB-RestartUCB",
+        "MASTER-n13",
+        "SCB-WeightUCB"
+      ]
+    },
+    {
+      "config": "nonstationary_LB/nonstationary-glb-s5.json",
+      "title": "Figure 1(e): GLB, S=5",
+      "runtime": true,
+      "algorithms": [
+        "GLM-UCB",
+        "GLB-RestartUCB",
+        "MASTER-n13",
+        "BVD-GLM-UCB",
+        "GLB-WeightUCB"
+      ]
+    },
+    {
+      "config": "nonstationary_LB/nonstationary-scb-s5.json",
+      "title": "Figure 1(f): SCB, S=5",
+      "runtime": true,
+      "algorithms": [
+        "LogUCB1",
+        "SCB-RestartUCB",
+        "MASTER-n13",
+        "SCB-WeightUCB"
+      ]
+    }
+  ]
+}

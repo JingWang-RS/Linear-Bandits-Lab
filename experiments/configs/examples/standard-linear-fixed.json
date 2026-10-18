@@ -1,0 +1,65 @@
+{
+  "horizon": 6000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "environment": {
+    "dimension": 2,
+    "mean_model": {
+      "link": "identity"
+    },
+    "feedback": {
+      "kind": "additive"
+    },
+    "noise": {
+      "distribution": "gaussian",
+      "scale": 1.0
+    },
+    "parameter_process": {
+      "kind": "stationary",
+      "bound": 1.0,
+      "initial": [
+        1.0,
+        0.0
+      ]
+    },
+    "action_process": {
+      "mode": "fixed",
+      "sampler": "uniform-cube-clipped",
+      "count": 50,
+      "bound": 1.0,
+      "resample_per_trial": false,
+      "seed": 0
+    }
+  },
+  "algorithms": [
+    {
+      "name": "OFUL",
+      "algorithm": "oful",
+      "parameters": {
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05
+      }
+    }
+  ],
+  "schema_version": 2
+}

@@ -1,0 +1,122 @@
+{
+  "horizon": 6000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "environment": {
+    "dimension": 2,
+    "mean_model": {
+      "link": "identity"
+    },
+    "feedback": {
+      "kind": "additive"
+    },
+    "noise": {
+      "distribution": "gaussian",
+      "scale": 1.0
+    },
+    "parameter_process": {
+      "kind": "rotation",
+      "turns": 1.0,
+      "bound": 1.0,
+      "initial": [
+        1.0,
+        0.0
+      ]
+    },
+    "action_process": {
+      "mode": "fixed",
+      "sampler": "uniform-cube-clipped",
+      "count": 50,
+      "bound": 1.0,
+      "resample_per_trial": false,
+      "seed": 0
+    }
+  },
+  "algorithms": [
+    {
+      "name": "OFUL",
+      "algorithm": "oful",
+      "parameters": {
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05
+      }
+    },
+    {
+      "name": "RestartUCB",
+      "algorithm": "restart-ucb",
+      "parameters": {
+        "restart_interval": 35,
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05
+      }
+    },
+    {
+      "name": "SlidingWindowUCB",
+      "algorithm": "sliding-window-ucb",
+      "parameters": {
+        "window": 35,
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05
+      }
+    },
+    {
+      "name": "D-LinUCB",
+      "algorithm": "d-linucb",
+      "parameters": {
+        "gamma": 0.9771196266373319,
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05
+      }
+    },
+    {
+      "name": "WeightUCB",
+      "algorithm": "weight-ucb",
+      "parameters": {
+        "gamma": 0.995,
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05
+      }
+    },
+    {
+      "name": "MASTER-n0",
+      "algorithm": "master-oful",
+      "parameters": {
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05,
+        "noise_scale": 1.0,
+        "n_init": 0
+      }
+    },
+    {
+      "name": "MASTER-n13",
+      "algorithm": "master-oful",
+      "parameters": {
+        "regularization": 2.0,
+        "delta": 8.333333333333333e-05,
+        "noise_scale": 1.0,
+        "n_init": 13
+      }
+    }
+  ],
+  "schema_version": 2
+}

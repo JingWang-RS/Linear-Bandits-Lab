@@ -1,0 +1,128 @@
+{
+  "title": "Heavy-tailed linear bandits \u2014 ICML 2025",
+  "experiments": [
+    {
+      "config": "heavy_tailed_LB/heavy-tailed-linear-fixed.json",
+      "title": "Figure 1: Student-t noise",
+      "runtime": true,
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/linear-gaussian-fixed.json",
+      "title": "Figure 2: Gaussian noise",
+      "runtime": true,
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-pareto.json",
+      "title": "Figure 3(a): Pareto panel\nSource samples uncentered Lomax",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-lomax.json",
+      "title": "Figure 3(b): Lomax panel\nSource samples uncentered Pareto",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-fisk.json",
+      "title": "Figure 3(c): Fisk\nUncentered noise",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-noise-scale-1.5.json",
+      "title": "Figure 4(a): Noise scale 1.5",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-noise-scale-2.json",
+      "title": "Figure 4(b): Noise scale 2",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-noise-scale-2.5.json",
+      "title": "Figure 4(c): Noise scale 2.5",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-arms-50.json",
+      "title": "Figure 5(a): Fixed 50 arms",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-arms-40.json",
+      "title": "Figure 5(b): 40 of 50 arms",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    },
+    {
+      "config": "heavy_tailed_LB/appendix-arms-30.json",
+      "title": "Figure 5(c): 30 of 50 arms",
+      "algorithms": [
+        "OFUL",
+        "CRTM",
+        "CRMM",
+        "HeavyOFUL",
+        "Hvt-UCB"
+      ]
+    }
+  ]
+}

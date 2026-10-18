@@ -1,0 +1,106 @@
+{
+  "horizon": 6000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "environment": {
+    "dimension": 2,
+    "mean_model": {
+      "link": "identity"
+    },
+    "feedback": {
+      "kind": "additive"
+    },
+    "noise": {
+      "distribution": "student-t",
+      "scale": 1.0,
+      "moment_exponent": 0.79,
+      "known_moment": true,
+      "scale_mode": "log-uniform",
+      "max_log10_scale": 2,
+      "degrees_of_freedom": 1.8
+    },
+    "parameter_process": {
+      "kind": "stationary",
+      "bound": 1.0,
+      "initial": [
+        0.2212195821529499,
+        0.975224023736123
+      ]
+    },
+    "action_process": {
+      "mode": "subset",
+      "sampler": "uniform-cube-normalized",
+      "count": 40,
+      "bound": 1.0,
+      "resample_per_trial": true,
+      "seed": 0,
+      "pool_size": 50
+    }
+  },
+  "algorithms": [
+    {
+      "name": "OFUL",
+      "algorithm": "oful",
+      "parameters": {
+        "regularization": 2.0,
+        "delta": 2.0833333333333333e-05,
+        "noise_scale": 64345.22821760205
+      }
+    },
+    {
+      "name": "Hvt-UCB",
+      "algorithm": "hvt-ucb",
+      "parameters": {
+        "implementation": "icml25",
+        "regularization": 2.0,
+        "delta": 2.0833333333333333e-05,
+        "sigma_min": 0.012909944487358056,
+        "alpha": 1,
+        "confidence_scale": 5,
+        "noise_scale_multiplier": 1.0
+      }
+    },
+    {
+      "name": "HeavyOFUL",
+      "algorithm": "heavy-oful",
+      "parameters": {
+        "implementation": "icml25",
+        "regularization": 2.0,
+        "delta": 2.0833333333333333e-05,
+        "sigma_min": 0.012909944487358056,
+        "confidence_scale": 800,
+        "noise_scale_multiplier": 0.059085872698258296
+      }
+    },
+    {
+      "name": "CRTM",
+      "algorithm": "crtm",
+      "parameters": {
+        "implementation": "icml25",
+        "regularization": 2.0,
+        "delta": 0.01,
+        "moment_bound": 64345.22821760205,
+        "truncation_scale": 10.0,
+        "confidence_scale": 1.0
+      }
+    },
+    {
+      "name": "CRMM",
+      "algorithm": "crmm",
+      "parameters": {
+        "implementation": "icml25",
+        "regularization": 2.0,
+        "delta": 0.01,
+        "confidence_scale": 0.02,
+        "moment_bound": 64345.22821760205,
+        "experiment_mode": "icml25-appendix"
+      }
+    }
+  ],
+  "schema_version": 2
+}

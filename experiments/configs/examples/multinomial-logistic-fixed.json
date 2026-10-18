@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "horizon": 6000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "environment": {
+    "dimension": 2,
+    "mean_model": {
+      "link": "softmax",
+      "outcomes": 4
+    },
+    "feedback": {
+      "kind": "categorical",
+      "reward_vector": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "noise": {
+      "distribution": "none",
+      "scale": 0.0
+    },
+    "parameter_process": {
+      "kind": "stationary",
+      "bound": 10.0,
+      "initial": [
+        [
+          5.0,
+          0.0
+        ],
+        [
+          -5.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.0
+        ],
+        [
+          0.0,
+          -5.0
+        ]
+      ]
+    },
+    "action_process": {
+      "mode": "fixed",
+      "sampler": "uniform-cube-clipped",
+      "count": 20,
+      "bound": 1.0,
+      "resample_per_trial": false,
+      "seed": 0
+    }
+  },
+  "algorithms": [
+    {
+      "name": "MLogB-variant",
+      "algorithm": "mlogb-ucb-variant",
+      "parameters": {
+        "delta": 0.00016666666666666666
+      }
+    },
+    {
+      "name": "MNL-UCB-local",
+      "algorithm": "mnl-ucb-local",
+      "parameters": {
+        "delta": 0.00016666666666666666
+      }
+    }
+  ]
+}

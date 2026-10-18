@@ -1,0 +1,59 @@
+{
+  "schema_version": 2,
+  "horizon": 6000,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "environment": {
+    "dimension": 2,
+    "mean_model": {
+      "link": "sigmoid"
+    },
+    "feedback": {
+      "kind": "additive"
+    },
+    "noise": {
+      "distribution": "pareto",
+      "shape": 3.0,
+      "scale": 0.15,
+      "moment_exponent": 0.5,
+      "known_moment": true,
+      "scale_mode": "log-uniform",
+      "max_log10_scale": 0.3
+    },
+    "parameter_process": {
+      "kind": "stationary",
+      "bound": 1.0,
+      "initial": [
+        0.8,
+        0.6
+      ]
+    },
+    "action_process": {
+      "mode": "resample",
+      "count": 50,
+      "bound": 1.0,
+      "resample_per_trial": false,
+      "sampler": "uniform-cube-normalized",
+      "seed": 0
+    }
+  },
+  "algorithms": [
+    {
+      "name": "CRTM",
+      "algorithm": "crtm",
+      "parameters": {
+        "delta": 0.05
+      }
+    }
+  ]
+}
